@@ -7,12 +7,7 @@ const {
 } = require("../controllers/foodControllers");
 const router = express.Router();
 
-router.get("/", getFood);
-
-router.post("/", setFood);
-
-router.put("/:id", updateFood);
-
-router.delete("/:id", deleteFood);
+router.route("/").get(getFood).post(setFood);
+router.route("/:id").put(updateFood).delete(deleteFood);
 
 module.exports = router;
