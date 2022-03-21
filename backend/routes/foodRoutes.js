@@ -4,7 +4,7 @@ const {
 	setFood,
 	updateFood,
 	deleteFood,
-} = require("../controllers/foodControllers");
+} = require("../controllers/foodController");
 const router = express.Router();
 
 router.route("/").get(getFood).post(setFood);
