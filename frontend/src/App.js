@@ -51,6 +51,7 @@ function App() {
 				Accept: "*/*",
 				"Content-Type": "application/json",
 				// "Content-Type": "text/plain",
+				// "Content-Type": "text/html",
 			},
 			// mode: "no-cors",
 			// body: JSON.stringify(text),
@@ -61,7 +62,7 @@ function App() {
 		console.log("hoj");
 		console.log(response);
 		const data = await response.json();
-		console.log("foodData" + data);
+		console.log(data);
 
 		const newDishes = [...data, { text }];
 		//when I have content type text plain i get to here
@@ -102,11 +103,15 @@ function App() {
 					{dishes.map((dish) => (
 						<div key={dish._id} className="dish-box">
 							<p>{dish.length === 0 ? "loading..." : dish.text}</p>
+							<a href="./" className="recipe-link">
+								More info
+							</a>
 						</div>
 					))}
 				</div>
+				<AddDishForm addDish={addDish} />
 			</section>
-			<AddDishForm addDish={addDish} />
+
 			{/* <Footer /> */}
 		</div>
 	);

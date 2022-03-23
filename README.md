@@ -22,20 +22,26 @@ Next step would also be to generate a whole menu for the week, and then be able 
 
 ## What would be good added
 
-Write things that I did not include. Like statemanagment, tests etc.
+Write things that I did not include. Like state management, tests etc.
 
 ## Tech
 
 This is a MERN app using MongoDB, Express.js, React and Node.js. It is deployed through Herouku.
 The backend is set up Node.js using Express for the routing, connecting to a database in MongoDB together with Mongoose. It's developed locally in VScode.
 
-## To the project
+## To run the project
 
-To start the project locally you need to clone it from here and then run:
+## To start the backend
+
+Run:
 
 ### `npm install`
 
 ## To start frontend
+
+Cd into frontend and run:
+
+### `npm install`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -64,10 +70,3 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-## To start backend server
-
-### `npm run server`
-
-Runs the app in the development mode.\
-Open [http://localhost:5000](http://localhost:5000) to view it in your browser.

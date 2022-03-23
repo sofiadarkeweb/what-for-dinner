@@ -8,7 +8,7 @@ function AddDishForm({ addDish }) {
 		if (!value) return;
 		addDish(value);
 		setValue("");
-		console.log(value);
+		console.log({ value });
 	};
 
 	return (
@@ -17,10 +17,10 @@ function AddDishForm({ addDish }) {
 				type="text"
 				className="input"
 				value={value}
-				placeholder="add new dish"
+				placeholder="Type in a new dish"
 				onChange={(e) => setValue(e.target.value)}
 			/>
-			{/* <button onClick={handleSubmit}>Add +</button> */}
+			<button onClick={handleSubmit}>Add me</button>
 		</form>
 	);
 }
