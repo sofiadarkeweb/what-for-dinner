@@ -12,7 +12,7 @@ function AddDishForm({ addDish }) {
 	};
 
 	return (
-		<form>
+		<form onSubmit={handleSubmit}>
 			<input
 				type="text"
 				className="input"
@@ -20,7 +20,7 @@ function AddDishForm({ addDish }) {
 				placeholder="add new dish"
 				onChange={(e) => setValue(e.target.value)}
 			/>
-			<button onClick={handleSubmit}>Add +</button>
+			{/* <button onClick={handleSubmit}>Add +</button> */}
 		</form>
 	);
 }

@@ -10,7 +10,7 @@ To create and inspiring app for me and my kids, helping us in our daily life, ma
 
 ## What I would like to develop
 
-Initially the plan was also to have a user register and login, which I started but put aside for now. That would be good if anyone else would like to use the app.
+Initially the plan was also to have a user register and login, which I started but put aside for now. The I would include a JWT token and use that for authentication. This would be good if anyone else would like to use the app.
 
 For now in the frontend I can only create (POST) a new dish and read (GET) what already exist in the database, but I can't delete or update (PUT and DELETE). This exist in the backend but is not in the frontend, that will be added.
 
@@ -20,11 +20,22 @@ Also I would like to have some visual representation of our dishes, maybe photog
 
 Next step would also be to generate a whole menu for the week, and then be able to save those as favorites.
 
+## What would be good added
+
+Write things that I did not include. Like statemanagment, tests etc.
+
 ## Tech
 
 This is a MERN app using MongoDB, Express.js, React and Node.js. It is deployed through Herouku.
+The backend is set up Node.js using Express for the routing, connecting to a database in MongoDB together with Mongoose. It's developed locally in VScode.
 
-## To start front end
+## To the project
+
+To start the project locally you need to clone it from here and then run:
+
+### `npm install`
+
+## To start frontend
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

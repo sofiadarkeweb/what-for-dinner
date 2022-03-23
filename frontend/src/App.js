@@ -27,6 +27,7 @@ function App() {
 			method: "GET",
 		});
 		const data = await response.json();
+		console.log(response);
 		setDishes(data);
 		console.log(data);
 	}
@@ -42,25 +43,35 @@ function App() {
 
 	// get All dishes
 	async function addDish(text) {
+		console.log("hej");
 		const response = await fetch("http://localhost:5000/api/food", {
 			method: "POST",
 			body: text,
-			headers: { "Content-type": "application/json" },
-			mode: "no-cors",
-			// body: JSON.stringify()
+			headers: {
+				Accept: "*/*",
+				"Content-Type": "application/json",
+				// "Content-Type": "text/plain",
+			},
+			// mode: "no-cors",
+			// body: JSON.stringify(text),
 		});
 
-		const foodData = await response.json();
-		console.log("fooddata" + foodData);
-		const newDishes = [...foodData, { text: { text } }];
-		console.log(foodData);
+		//when I have content type application/json i get to here
+
+		console.log("hoj");
+		console.log(response);
+		const data = await response.json();
+		console.log("foodData" + data);
+
+		const newDishes = [...data, { text }];
+		//when I have content type text plain i get to here
 		setDishes(newDishes);
 	}
 
-	useEffect(() => {
-		addDish();
-		// setDishes(data);
-	}, []);
+	// useEffect(() => {
+	// 	addDish();
+	// 	// setDishes(data);
+	// }, []);
 
 	return (
 		<div className="App">
