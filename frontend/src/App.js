@@ -24,7 +24,7 @@ function App() {
 
 	// GET All dishes
 	async function getFood() {
-		const response = await fetch("http://localhost:5000/api/food", {
+		const response = await fetch("/api/food", {
 			method: "GET",
 		});
 		const data = await response.json();
@@ -37,7 +37,7 @@ function App() {
 
 	// POST new dish
 	async function addDish(text) {
-		const response = await fetch("http://localhost:5000/api/food", {
+		const response = await fetch("/api/food", {
 			method: "POST",
 			headers: {
 				Accept: "*/*",
