@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const colors = require("colors");
 const dotenv = require("dotenv").config();
 const { errorHandler } = require("./middleware/errorMiddleware");
@@ -21,6 +22,7 @@ app.use((req, res, next) => {
 });
 
 // Serve frontend
+
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static(path.join(__dirname, "../frontend/build")));
 

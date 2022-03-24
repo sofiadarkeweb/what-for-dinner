@@ -5,6 +5,7 @@ function AddDishForm({ addDish }) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		if (!value) alert("Fill in a dish");
 		if (!value) return;
 		addDish(value);
 		setValue("");
@@ -19,6 +20,7 @@ function AddDishForm({ addDish }) {
 				placeholder="Type in a new dish"
 				onChange={(e) => setValue(e.target.value)}
 				id={value}
+				required
 			/>
 			<button onClick={handleSubmit}>Add me</button>
 		</form>

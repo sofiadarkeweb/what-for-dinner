@@ -1,11 +1,12 @@
 {
 	"name": "what-for-dinner",
 	"version": "1.0.0",
-	"description": "App using Mern stack generating weekly menues",
+	"description": "App using Mern stack generating foos suggestions",
 	"main": "server.js",
 	"scripts": {
 		"start": "node backend/server.js",
-		"server": "nodemon backend/server.js"
+		"server": "nodemon backend/server.js",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
 	},
 	"author": "Sofia Darke",
 	"license": "MIT",
