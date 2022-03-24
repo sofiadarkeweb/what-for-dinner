@@ -6,12 +6,8 @@ import AddDishForm from "./components/AddDishForm";
 import Button from "./components/Button";
 
 function App() {
-	useEffect(() => {
-		Aos.init({ duration: 1000 });
-	}, []);
 	const [dishes, setDishes] = useState([]);
-	const [open, setOpen] = useState(true);
-
+	const [show, setShow] = useState(true);
 	const buttonTexts = [
 		"Another idea?",
 		"Not pleased?",
@@ -21,69 +17,51 @@ function App() {
 		"Give me more!",
 	];
 
-	// get All dishes
+	// animation from Aos
+	useEffect(() => {
+		Aos.init({ duration: 1000 });
+	}, []);
+
+	// GET All dishes
 	async function getFood() {
 		const response = await fetch("http://localhost:5000/api/food", {
 			method: "GET",
 		});
 		const data = await response.json();
-		console.log(response);
 		setDishes(data);
-		console.log(data);
 	}
 
 	useEffect(() => {
 		getFood();
-		// setDishes(data);
 	}, []);
 
-	const showSuggestion = () => {
-		setOpen(!open);
-	};
-
-	// get All dishes
+	// POST new dish
 	async function addDish(text) {
-		console.log("hej");
 		const response = await fetch("http://localhost:5000/api/food", {
 			method: "POST",
-			body: text,
 			headers: {
 				Accept: "*/*",
 				"Content-Type": "application/json",
-				// "Content-Type": "text/plain",
-				// "Content-Type": "text/html",
 			},
-			// mode: "no-cors",
-			// body: JSON.stringify(text),
+			body: JSON.stringify({ text }),
 		});
 
-		//when I have content type application/json i get to here
-
-		console.log("hoj");
-		console.log(response);
 		const data = await response.json();
-		console.log(data);
-
-		const newDishes = [...data, { text }];
-		//when I have content type text plain i get to here
+		const newDishes = [...dishes, data];
+		console.log(newDishes);
 		setDishes(newDishes);
 	}
 
-	// useEffect(() => {
-	// 	addDish();
-	// 	// setDishes(data);
-	// }, []);
-
 	return (
 		<div className="App">
-			<header className="App-header">
+			<header className="App-header" id="hero">
 				<h4>What's for dinner?</h4>
 
 				{
 					dishes.map((dish) => (
 						<div
 							key={dish._id}
-							className={open ? "app" : null}
+							className={show ? "app" : null}
 							data-aos="zoom-in"
 						>
 							<h1>{dish.length === 0 ? "loading..." : dish.text}</h1>
@@ -92,18 +70,21 @@ function App() {
 				}
 
 				<Button
-					onClick={showSuggestion}
+					onClick={() => setShow(!show)}
 					color="pink"
 					title={buttonTexts[Math.floor(Math.random() * buttonTexts.length)]}
 				/>
+				<a href="#all-dishes" className="all-dishes-link">
+					More ideas
+				</a>
 			</header>
-			<section>
+			<section id="all-dishes">
 				<h3>All my dishes</h3>
 				<div className="all-dishes">
 					{dishes.map((dish) => (
 						<div key={dish._id} className="dish-box">
 							<p>{dish.length === 0 ? "loading..." : dish.text}</p>
-							<a href="./" className="recipe-link">
+							<a href="/" className="recipe-link">
 								More info
 							</a>
 						</div>
@@ -111,8 +92,6 @@ function App() {
 				</div>
 				<AddDishForm addDish={addDish} />
 			</section>
-
-			{/* <Footer /> */}
 		</div>
 	);
 }

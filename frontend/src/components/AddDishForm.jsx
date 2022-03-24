@@ -8,7 +8,6 @@ function AddDishForm({ addDish }) {
 		if (!value) return;
 		addDish(value);
 		setValue("");
-		console.log({ value });
 	};
 
 	return (
@@ -19,6 +18,7 @@ function AddDishForm({ addDish }) {
 				value={value}
 				placeholder="Type in a new dish"
 				onChange={(e) => setValue(e.target.value)}
+				id={value}
 			/>
 			<button onClick={handleSubmit}>Add me</button>
 		</form>

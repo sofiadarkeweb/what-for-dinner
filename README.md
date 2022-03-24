@@ -8,21 +8,23 @@ A problem I'm often phasing is regarding the never ending question of, what shou
 
 To create and inspiring app for me and my kids, helping us in our daily life, making it more fun to decide on dinner. Engaging my children in the process always makes them more eager to eat and help with the cooking. The idea is that they can add their own ideas when they arise. I decided that it would only be food that we ourselves add, because then it would be more likely that it would be something they like. If there are recipes that we want to add, then that will be link, but many dishes don't have recipes.
 
-## What I would like to develop
+## What I would like to develop (and was asked for but did not manage within the time)
 
-Initially the plan was also to have a user register and login, which I started but put aside for now. The I would include a JWT token and use that for authentication. This would be good if anyone else would like to use the app.
+Initially the plan was also to have a user register and login, which I started but put aside for now. The I would include a JWT token and use that for authentication. This would be good if anyone else would like to use the app. This would have added that extra layer of state management and validation for the app.
 
-For now in the frontend I can only create (POST) a new dish and read (GET) what already exist in the database, but I can't delete or update (PUT and DELETE). This exist in the backend but is not in the frontend, that will be added.
+For now in the frontend I can create (POST) a new dish and read (GET) what already exist in the database, but I can't delete or update (PUT and DELETE). This is set up in the backend but is not in the frontend, that will be added later.
 
-Another idea would be to include recipe ideas from another API, for inspiration.
+Reusable code, the button is a reusable component, I would like to incorporate a few more key elements if I build out the app.
 
-Also I would like to have some visual representation of our dishes, maybe photograph them at home. Engaging the kids even more.
+The structure in the front end, I would like to divide it up more into components, normally I prefer to have as little as possible in App.js, however again, because of time, a little bit too muc code ended up there.
+
+Another idea would be to include recipe ideas from another API, for inspiration...
+
+Also I would like to have some visual representation of our dishes, maybe photograph them at home. Engaging the kids even more. Perhaps add a link below the name of the dish for some more info, linking to a recipe or another page within this app with more content added.
 
 Next step would also be to generate a whole menu for the week, and then be able to save those as favorites.
 
-## What would be good added
-
-Write things that I did not include. Like state management, tests etc.
+I did not do any tests for this, it's a small app but testing is always good to bare in mind. That would have been good to add.
 
 ## Tech
 

@@ -6,6 +6,10 @@
 	box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 .App {
 	text-align: center;
 }
@@ -69,6 +73,13 @@ section {
 	justify-content: center;
 	/* font-size: calc(10px + 2vmin);  */
 	color: #fbeee0;
+}
+
+.all-dishes-link {
+	padding-top: 3rem;
+	margin-bottom: 0;
+	color: #5a1cd7;
+	font-size: 0.6em;
 }
 
 .all-dishes {
