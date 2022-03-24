@@ -1,5 +1,7 @@
 # What's for dinner? App
 
+https://foodappsofia.herokuapp.com/
+
 ## Summary
 
 A problem I'm often phasing is regarding the never ending question of, what should we have for dinner? I have my 2 kids every other week and on that particular week, in the middle of everything else that needs to be done, my imagination is not always what I'd hope. Because of that, together with my children I have written down (on paper) a range of dishes that everyone likes and then when we try to decide we can look at that one. In this app I have gathered all these dishes. And you can also generate a random suggestion of what to pick. What's for dinner?
@@ -28,7 +30,7 @@ I did not do any tests for this, it's a small app but testing is always good to 
 
 ## Tech
 
-This is a MERN app using MongoDB, Express.js, React and Node.js. It is deployed through Herouku.
+This is a MERN app using MongoDB, Express.js, React and Node.js. It is deployed through Heroku.
 The backend is set up Node.js using Express for the routing, connecting to a database in MongoDB together with Mongoose. It's developed locally in VScode.
 
 ## To run the project
