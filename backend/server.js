@@ -21,6 +21,17 @@ app.use((req, res, next) => {
 	next();
 });
 
+app.use(
+	cors({
+		origin: "*",
+		methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+		// headers: { "content-type": "text/plain" },
+	})
+);
+
+app.use("/api/food", require("./routes/foodRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
+
 // Serve frontend
 
 if (process.env.NODE_ENV === "production") {
@@ -34,17 +45,6 @@ if (process.env.NODE_ENV === "production") {
 } else {
 	app.get("/", (req, res) => res.send("Please set to production"));
 }
-
-app.use(
-	cors({
-		origin: "*",
-		methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
-		// headers: { "content-type": "text/plain" },
-	})
-);
-
-app.use("/api/food", require("./routes/foodRoutes"));
-app.use("/api/users", require("./routes/userRoutes"));
 
 app.use(errorHandler);
 

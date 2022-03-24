@@ -1,7 +1,7 @@
 {
 	"name": "what-for-dinner",
 	"version": "1.0.0",
-	"description": "App using Mern stack generating foos suggestions",
+	"description": "App using MERN stack generating food suggestions",
 	"main": "server.js",
 	"scripts": {
 		"start": "node backend/server.js",
