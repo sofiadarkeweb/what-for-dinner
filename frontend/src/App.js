@@ -56,7 +56,7 @@ function App() {
 	return (
 		<div className="App">
 			<header className="App-header" id="hero">
-				<h4>What's for dinner?</h4>
+				<h4>Vad ska vi äta ikväll?</h4>
 
 				{
 					dishes.map((dish) => (
