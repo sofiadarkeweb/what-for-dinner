@@ -4,6 +4,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import AddDishForm from "./components/AddDishForm";
 import Button from "./components/Button";
+import Footer from "./components/Footer";
 
 function App() {
 	const [dishes, setDishes] = useState([]);
@@ -91,6 +92,7 @@ function App() {
 					))}
 				</div>
 				<AddDishForm addDish={addDish} />
+				<Footer />
 			</section>
 		</div>
 	);
